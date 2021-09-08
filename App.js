@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
 import HomeStack from "./screens/HomeStack";
 import StoreStack from "./screens/StoreStack";
+import GiftStack from "./screens/GiftStack";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -26,6 +27,14 @@ export default function App() {
           component={StoreStack}
           options={() => ({
             tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} />,
+            headerShown: false,
+          })}
+        />
+        <Tab.Screen
+          name="Gift"
+          component={GiftStack}
+          options={() => ({
+            tabBarIcon: ({ color }) => <TabBarIcon name="gift" color={color} />,
             headerShown: false,
           })}
         />
